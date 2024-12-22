@@ -62,7 +62,7 @@
 
 .search-container {
   position: relative;
-  width: 300px;
+  width: fit-content;
   display: flex;
   align-items: center;
 }
@@ -75,19 +75,25 @@
 
 .search-input {
   width: 0;
-  padding: 8px;
+  padding: 0; /* Remove padding */
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
-  transition: width 0.3s ease-in-out, padding-left 0.3s ease-in-out;
-  padding-left: 30px; /* Adjust for the icon */
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  padding-left: 0; /* No space for the icon when closed */
+  visibility: hidden; /* Fully hidden */
+  opacity: 0; /* Invisible */
 }
 
 .search-input.open {
-  width: 100%;
-  padding-left: 30px; /* Adjust for the icon */
+  width: 100%; /* Full width when open */
+  padding: 8px; /* Restore padding */
+  padding-left: 30px; /* Space for the icon */
+  visibility: visible; /* Make it visible */
+  opacity: 1; /* Fully opaque */
 }
+
 
 
 .scrollable-div {

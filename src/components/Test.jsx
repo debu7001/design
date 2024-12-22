@@ -39,7 +39,7 @@ const Test = () => {
                             />
                            
                         </div>
-                        <span><FaSearchPlus onClick={toggleSearch}/></span>
+                        <span><FaSearchPlus onClick={toggleSearch} style={{color:'white'}} size={20}/></span>
                       </div>
                      
                     </Col>
