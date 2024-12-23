@@ -338,3 +338,39 @@
   right: 5px;
   z-index: 1;
 }
+
+.lottery {
+  font-size: 11px !important;
+    color: white;
+    font-weight: bold;
+    padding: 9px 0px;
+    display: flex
+;
+    background: #0088CC;
+    font-size: 11px;
+}
+
+.line{
+  border: 1px solid white;
+  margin: 0px 7px;
+
+}
+
+.ulBlue {
+  background: #0057a8cc;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  height: 100px;
+  width: 100px;
+}
+
+.imagesContainer{
+  display: flex;
+    flex-wrap: wrap;
+    
+}

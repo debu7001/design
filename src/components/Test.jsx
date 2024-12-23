@@ -14,8 +14,48 @@ import { useRef } from 'react';
 
 const Test = () => {
     const popUpRef = useRef(null);
+    const containerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
     const [popUp,setPopUp]=useState(false)
+    const calculateDimensions = () => {
+        const containerWidth = containerRef.current?.offsetWidth || window.innerWidth;
+        const imageWidth = Math.floor(containerWidth / 4); // Divide container width by 4
+        const imageHeight = imageWidth * 0.85; // Maintain 4:3 aspect ratio
+        return { imageWidth, imageHeight };
+      };
+  
+    const [dimensions, setDimensions] = useState(calculateDimensions())
+
+    const images = [
+        "https://nd.sprintstaticdata.com/casino-icons/lc/ourroullete.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/superover3.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/goal.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/ab4.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/lucky15.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/superover2.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen41.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen42.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/roulette3.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/sicbo2.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/roulette2.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen33.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/sicbo.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/ballbyball.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen32.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/roulette1.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen20.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen9.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen8.jpg"
+      ];
+
+      useEffect(() => {
+        const handleResize = () => setDimensions(calculateDimensions());
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+      
+      
 
         useEffect(() => {
             const handleClickOutside = (event) => {
@@ -33,6 +73,9 @@ const Test = () => {
                 document.removeEventListener("mousedown", handleClickOutside);
             };
         }, []); 
+
+
+      
 
     const toggleSearch = () => {
         setIsOpen((prev) => !prev);
@@ -99,7 +142,15 @@ const Test = () => {
                 </div>
 
             </div>
-
+                 <ul className='ulBlue'>
+                    <li className='lottery'>LOTTERY <div className='line'></div></li>
+                    <li className='lottery'>SPORTS <div className='line'></div></li>
+    
+                    <li className='lottery'>OUR CASINO <div className='line'></div></li>
+                    <li className="lottery">LIVE CASINO <div className='line'></div></li>
+                    <li className='lottery'>SLOTS <div className='line'></div></li>
+                    <li className='lottery'>FANTASY</li>
+                 </ul>
             <ul>
                 <li><a class="active" href="#home"><FaPerson size={15} />POLITICS</a></li>
                 <li><a href="#news"><MdSportsCricket size={15} />CRICKET</a></li>
@@ -133,7 +184,28 @@ const Test = () => {
                 <div class="box"><div className='lock'><MdLock color='white' size={20} /></div></div>
                 <div class="box locked"></div>
             </div>
-
+            <div ref={containerRef} style={{ width: "100%", overflow: "hidden" }}>
+            <div className='imagesContainer'>
+          {
+            images.map((url)=>{
+                return (
+                    <div   style={{
+                        width: dimensions.imageWidth,
+                        height: dimensions.imageHeight,
+                        padding: 5 // Optional spacing between images
+                      }}>
+                       <img src={url}  style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              
+            }}/>
+                    </div>
+                )
+            })
+          }
+</div>
+            </div>
 
         </>
     )
