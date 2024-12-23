@@ -6,6 +6,7 @@ import { FaPerson } from "react-icons/fa6";
 import { IoTennisball } from "react-icons/io5";
 import { MdOutlineSportsKabaddi } from "react-icons/md";
 import { FaSearchPlus } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 
 const Test = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -63,6 +64,28 @@ const Test = () => {
                     <li><a href="#about"><MdOutlineSportsKabaddi size={15}/>CABADDI</a></li>
 
                 </ul>
+
+                <div className='horizontalSpaceBetween'>
+                    <div className='alignvertically'>
+                    <span className='smallBold'>Assembly Election 2024</span>
+                    <span className='smaller'>25/11/2024 00:01:00</span>
+                        </div>
+                        <FaFacebookF size={10}/>
+                </div>
+
+                <div style={{display:'flex'}}>
+                    <span className='oneXtwo'>1</span>
+                    <span className='oneXtwo'>x</span>
+                    <span className='oneXtwo'>2</span>
+                </div>
+                <div class="container">
+    <div class="box locked"></div>
+    <div class="box"></div>
+    <div class="box blue"></div>
+    <div class="box pink"></div>
+    <div class="box"></div>
+    <div class="box locked"></div>
+  </div>
 
 
         </>
