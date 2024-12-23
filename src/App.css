@@ -236,7 +236,7 @@
 
 .box {
   width: 80px;
-  height: 19px;
+  height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,3 +263,20 @@
   margin-bottom: 5px;
 }
 
+.lockContainer {
+  position: absolute;
+  top: 0;
+  left: 10;
+  /* right: 161px; */
+  /* margin-bottom: 17px; */
+  left: 50%;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.lock {
+  position: absolute;
+  right: -11px;
+  z-index: 1;
+
+}
