@@ -87,7 +87,7 @@ const Test = () => {
                 
                 <div class="box blue"></div>
                 <div class="box pink"></div>
-                <div class="box"></div>
+                <div class="box"><div className='lock'><MdLock color='white'/></div>chNGES</div>
                 <div class="box locked"></div>
             </div>
 
