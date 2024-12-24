@@ -374,3 +374,27 @@
     flex-wrap: wrap;
     
 }
+
+
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* Adjust space between items */
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.container1 div {
+  flex: 1 1 calc(25% - 10px); /* 4 items per row, minus gap */
+  box-sizing: border-box;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.container1 img {
+  width: 100%; /* Makes the image responsive */
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the entire area */
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import { IoFootballOutline } from "react-icons/io5";
 import { MdSportsCricket } from "react-icons/md";
 import { FaPerson } from "react-icons/fa6";
@@ -12,18 +12,21 @@ import { FaHome } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRef } from 'react';
 
+
+
+
 const Test = () => {
     const popUpRef = useRef(null);
     const containerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
-    const [popUp,setPopUp]=useState(false)
+    const [popUp, setPopUp] = useState(false)
     const calculateDimensions = () => {
         const containerWidth = containerRef.current?.offsetWidth || window.innerWidth;
         const imageWidth = Math.floor(containerWidth / 4); // Divide container width by 4
         const imageHeight = imageWidth * 0.85; // Maintain 4:3 aspect ratio
         return { imageWidth, imageHeight };
-      };
-  
+    };
+
     const [dimensions, setDimensions] = useState(calculateDimensions())
 
     const images = [
@@ -47,35 +50,35 @@ const Test = () => {
         "https://nd.sprintstaticdata.com/casino-icons/lc/teen20.jpg",
         "https://nd.sprintstaticdata.com/casino-icons/lc/teen9.jpg",
         "https://nd.sprintstaticdata.com/casino-icons/lc/teen8.jpg"
-      ];
+    ];
 
-      useEffect(() => {
+    useEffect(() => {
         const handleResize = () => setDimensions(calculateDimensions());
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-      }, []);
-      
-      
-
-        useEffect(() => {
-            const handleClickOutside = (event) => {
-               
-                if (popUpRef.current && !popUpRef.current.contains(event.target)) {
-                    setPopUp(false);
-                }
-            };
-    
-
-            document.addEventListener("mousedown", handleClickOutside);
-    
-  
-            return () => {
-                document.removeEventListener("mousedown", handleClickOutside);
-            };
-        }, []); 
+    }, []);
 
 
-      
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+
+            if (popUpRef.current && !popUpRef.current.contains(event.target)) {
+                setPopUp(false);
+            }
+        };
+
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+
+
 
     const toggleSearch = () => {
         setIsOpen((prev) => !prev);
@@ -99,11 +102,11 @@ const Test = () => {
                                 <div className='verticallyCenter'>
                                     <div class="dropdown "><a class="user-name ms-1 ms-xl-3 d-inline-block d-xl-none dropdown-toggle" id="react-aria2371733761-1" aria-expanded="false">Demo </a></div>
                                     <RiArrowDropDownLine size={20} className='downArrow' />
-                                   {
-                                    popUp && ( <div className='popUp' ref={popUpRef}>
+                                    {
+                                        popUp && (<div className='popUp' ref={popUpRef}>
 
                                         </div>)
-                                   }
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -142,15 +145,15 @@ const Test = () => {
                 </div>
 
             </div>
-                 <ul className='ulBlue'>
-                    <li className='lottery'>LOTTERY <div className='line'></div></li>
-                    <li className='lottery'>SPORTS <div className='line'></div></li>
-    
-                    <li className='lottery'>OUR CASINO <div className='line'></div></li>
-                    <li className="lottery">LIVE CASINO <div className='line'></div></li>
-                    <li className='lottery'>SLOTS <div className='line'></div></li>
-                    <li className='lottery'>FANTASY</li>
-                 </ul>
+            <ul className='ulBlue'>
+                <li className='lottery'>LOTTERY <div className='line'></div></li>
+                <li className='lottery'>SPORTS <div className='line'></div></li>
+
+                <li className='lottery'>OUR CASINO <div className='line'></div></li>
+                <li className="lottery">LIVE CASINO <div className='line'></div></li>
+                <li className='lottery'>SLOTS <div className='line'></div></li>
+                <li className='lottery'>FANTASY</li>
+            </ul>
             <ul>
                 <li><a class="active" href="#home"><FaPerson size={15} />POLITICS</a></li>
                 <li><a href="#news"><MdSportsCricket size={15} />CRICKET</a></li>
@@ -184,29 +187,21 @@ const Test = () => {
                 <div class="box"><div className='lock'><MdLock color='white' size={20} /></div></div>
                 <div class="box locked"></div>
             </div>
-            <div ref={containerRef} style={{ width: "100%", overflow: "hidden" }}>
-            <div className='imagesContainer'>
-          {
-            images.map((url)=>{
-                return (
-                    <div   style={{
-                        width: dimensions.imageWidth,
-                        height: dimensions.imageHeight,
-                        padding: 5 // Optional spacing between images
-                      }}>
-                       <img src={url}  style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              
-            }}/>
-                    </div>
-                )
-            })
-          }
-</div>
-            </div>
 
+
+
+
+            <div class="container1">
+                {
+                    images.map((image) => {
+                        return (
+                            <div>
+                                <img src={image} />
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </>
     )
 }
