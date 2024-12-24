@@ -125,7 +125,7 @@ const Test = () => {
                                 <input
                                     type="text"
                                     className={`search-input ${isOpen ? "open" : ""}`}
-                                    placeholder="Search..."
+                                    placeholder="Search here"
                                 />
 
                             </div>

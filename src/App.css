@@ -89,7 +89,7 @@
 .search-input.open {
   width: 100%; /* Full width when open */
   padding: 8px; /* Restore padding */
-  padding-left: 30px; /* Space for the icon */
+  padding-left: 6px; /* Space for the icon */
   visibility: visible; /* Make it visible */
   opacity: 1; /* Fully opaque */
 }
@@ -199,6 +199,7 @@
 ;
   align-items: center;
   gap: 9px;
+  min-height: 36px;
 }
 
 .alignvertically {
@@ -357,7 +358,7 @@
 }
 
 .ulBlue {
-  background: #0057a8cc;
+  background: #0088CC;
   display: flex
 ;
   align-items: center;
