@@ -49,7 +49,18 @@ const Test = () => {
         "https://nd.sprintstaticdata.com/casino-icons/lc/teen.jpg",
         "https://nd.sprintstaticdata.com/casino-icons/lc/teen20.jpg",
         "https://nd.sprintstaticdata.com/casino-icons/lc/teen9.jpg",
-        "https://nd.sprintstaticdata.com/casino-icons/lc/teen8.jpg"
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen8.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/ourroullete.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/superover3.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/goal.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/ab4.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/lucky15.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/superover2.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/sicbo2.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/roulette2.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/teen33.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/sicbo.jpg",
+        "https://nd.sprintstaticdata.com/casino-icons/lc/ballbyball.jpg",
     ];
 
     useEffect(() => {
